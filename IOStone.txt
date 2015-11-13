@@ -1,0 +1,102 @@
+IOSTONE is a multi platform disk, file I/O and buffer cache efficiencies
+benchmark program.
+It was orginaly made for UNIX, but is ported to OS/2 (version 2.0 or better)
+and DOS (version 3.0 or better).
+
+Included in this archive are the OS/2 executable (IOStone.exe), the DOS
+executable (IOSTONED.EXE), this file, and a directory containing the source
+code and two project files for Borland C++ Compilers (DOS and OS/2)
+
+This program should be run without other processes competing for system
+resources. It uses aprox 5 megabytes of disk space. Make sure that at least
+this much space is available on your file system before you run the program.
+
+The result is printed out in IOSTONES/sec. and read/write troughput in kb/sec.
+Note that the read/write troughput includes the overhead time of opening and
+closing files. But anyway, it gives an idea of what your system can cope with
+on a busy day.
+
+To the users of the previous port: You will most likely not get the same
+result as with the previous version. This is because a bug in the port
+concerning the file name generation for the spacer file has been fixed.
+
+Ketil Kintel <kintel@hsr.no>
+Computer Science, Rogaland University Centre.
+
+
+
+REFERENCE:
+
+A i486DX-50, 20Mb RAM, 1270 Kb HPFS CACHE, Quantum PD 425AT IDE on ISA
+running OS/2 2.1 gives aprox 13500 IOSTONES/sek.
+
+A i486DX-33, 16Mb RAM, 256 Kb HPFS CACHE, Quantum PD 230AT IDE on ISA
+running OS/2 2.1 with TCP/IP and NETWARE gives aprox 4700 IOSTONES/sek.
+Enlarging the cache to 700 Kb gives no performance enchancment.
+
+A i486DX-50, 4096 Kb FAT CACHE, Quantum ELS 127AT IDE on ISA
+running plain DOS 6.2 gives aprox 55000 IOSTONES/sek.
+It was running from the cache, the disk light didn't blink during the test.
+
+A i486DX-33, 1024 Kb FAT CACHE, Quantum PD 170AT IDE on ISA
+running plain DOS 5.0 gives aprox 12200 IOSTONES/sek.
+
+
+NEW RESULTS:
+
+If you get results from a new (machine/operating system/disk controller and
+drive) combination, please send them to becker@iris.ucdavis.edu. Please
+include complete information on the machine type, operating system, version,
+disk controller, and disk drives.  Also make a note of any system
+modifications that have been performed.
+
+
+HISTORY:
+
+-------------------------------------------------------------------------
+ 06/27/90
+   Orginal "I/O Stone" Benchmark Program
+   Version C/II
+
+   Written by: Arvin Park (park@midas.ucdavis.edu) and
+            Jeff Becker (becker@iris.ucdavis.edu)
+            Division of Computer Science
+            University of California, Davis
+            Davis CA 95616
+            (916) 752-5183
+
+-------------------------------------------------------------------------
+ 08/26/91 Tin Le
+       Added simple Makefile.
+
+--------------------------------------------------------------------------
+ 07/21/93 Oddgeir Kvien, kvien@elkraft.unit.no
+
+ Slightly modified to compile with Borland C++ for OS/2
+
+--------------------------------------------------------------------------
+ 11/17/93 Ketil Kintel, kintel@hsr.no
+
+ -Fixed bug with the file name generation for the spacer file.
+ -Slightly modified to show some output while running. Users with slow
+  systems will shurely appriciate this.
+ -Added code for average read/write troughput.
+ -Added code for number of file opens/closes.
+ -Modified to compile on a 16bit compiler also (Bolrand C++ 3.11 DOS)
+  An int ain't always an int...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
